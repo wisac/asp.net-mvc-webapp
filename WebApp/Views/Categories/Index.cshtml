@@ -1,0 +1,40 @@
+﻿@model List<Category>;
+@{
+   ViewBag.Title = "Categories";
+}
+
+@section mainTitle {
+
+   <h1>Categories</h1>
+}
+
+@if (Model != null && Model.Count > 0)
+{
+   <table class="table table-striped">
+   <thead>
+      <tr>
+         <th>No.</th>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      @{
+            int i = 1;
+            @foreach (var category in Model)
+            {
+               <tr>
+                  <td> @(i++) </td>
+                  <td>@category.Name</td>
+                  <td>@category.Description</td>
+                  <td>
+                     <a href="@($"/categories/edit/{category.CategoryId}")" class="btn btn-primary">Edit</a>
+                  </td>
+               </tr>
+
+            }
+         }
+      </tbody>
+   </table>
+}
