@@ -21,7 +21,8 @@ public static class CategoriesRepository
          CategoryId = 3,
          Name = "Security",
          Description = "Secure the premises"
-      }
+      },new Category()
+   
    ];
 
    public static void AddCategory(Category category)

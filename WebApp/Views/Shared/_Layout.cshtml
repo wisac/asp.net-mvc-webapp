@@ -47,6 +47,7 @@
    </div>
    <div class="container container-fluid"> @RenderBody()
    </div>
+   @await RenderSectionAsync("scripts", required: false)
 </body>
 
 </html>

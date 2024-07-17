@@ -48,4 +48,14 @@ public class CategoriesController : Controller
    {
       return View();
    }
+
+   public IActionResult Delete(int id)
+   {
+      bool success = CategoriesRepository.DeleteCategory(id);
+      if(success) {
+         return RedirectToAction(nameof(Index));
+      }
+
+      return View("Edit");
+   }
 }
