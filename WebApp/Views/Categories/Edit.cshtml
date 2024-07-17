@@ -3,6 +3,9 @@
 @model Category
 @{
    ViewBag.Title = "Edit";
+   ViewBag.SubmitButtonText = "Save";
+   ViewBag.Action = "edit";
+
 }
 @section mainTitle {
    @if (Model != null)
@@ -13,16 +16,4 @@
 
    <h3>Category: @Model.Name</h3>
 
-   <form asp-controller="Categories" asp-action="edit" asp-route-id="id" method="post">
-      <div class="text-danger">@(Html.ValidationMessage("Name"))
-      </div>
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" name="Name" value="@Model.Name" />
-      <label for="description">Description</label>
-      <input type="text" class="form-control" id="description" name="Description" value="@Model.Description" />
-      <div class="text-danger">
-         @Html.ValidationMessage("Description")
-      </div>
-
-      <input type="submit" value="Save" class="btn btn-primary mt-3" />
-   </form>
+<partial name="_Category" model="Model" />
