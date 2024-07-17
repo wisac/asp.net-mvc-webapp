@@ -73,7 +73,7 @@ public static class CategoriesRepository
          return null;
       }
 
-      categoryToUpdate.CategoryId = category.CategoryId;
+      categoryToUpdate.CategoryId = categoryId;
       categoryToUpdate.Description = category.Description;
       categoryToUpdate.Name = category.Name;
 

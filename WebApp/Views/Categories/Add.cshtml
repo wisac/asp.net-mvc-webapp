@@ -1,0 +1,30 @@
+@using WebApp.Models
+@model Category
+@{
+   ViewBag.Title = "Add";
+}
+
+@section mainTitle {
+   <h3>Add Category</h3>
+}
+<form asp-controller="categories" asp-action="add" method="post">
+   <div class="mb-3">
+      <div class="text-danger" asp-validation-summary="All">
+
+      </div>
+      <label for="" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
+         placeholder="Enter Name" />
+
+   </div>
+   <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" name="description" id="description" aria-describedby="helpId"
+         placeholder="description" />
+      <div class="text-danger">
+         @Html.ValidationMessage("Description")
+      </div>
+      <input type="submit" class="btn mt-3 btn-primary"/>
+
+
+</form>

@@ -1,4 +1,6 @@
 ﻿@model List<Category>;
+
+
 @{
    ViewBag.Title = "Categories";
 }
@@ -13,12 +15,8 @@
    <table class="table table-striped">
    <thead>
       <tr>
-         <th>No.</th>
-         <th>Name</th>
-         <th>Description</th>
-         <th>Action</th>
-      </tr>
-   </thead>
+
+  </thead>
    <tbody>
       @{
             int i = 1;
@@ -37,4 +35,9 @@
          }
       </tbody>
    </table>
+   <div class="mt-5">
+   <a asp-controller="categories" asp-action="add" class="btn btn-primary">Add</a>
+</div>
+
+
 }

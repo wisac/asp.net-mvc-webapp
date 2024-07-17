@@ -1,10 +1,29 @@
 ﻿@using WebApp.Models
+
 @model Category
 @{
    ViewBag.Title = "Edit";
 }
 @section mainTitle {
-   <h1>Edit Category</h1>
-}
+   @if (Model != null)
+   {
+      <h3>Edit Category</h3>
+   }
+   }
 
-<h3>Category: @Model.CategoryId</h3>
+   <h3>Category: @Model.Name</h3>
+
+   <form asp-controller="Categories" asp-action="edit" asp-route-id="id" method="post">
+      <div class="text-danger">@(Html.ValidationMessage("Name"))
+      </div>
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="Name" value="@Model.Name" />
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="Description" value="@Model.Description" />
+      <div class="text-danger">
+         @Html.ValidationMessage("Description")
+      </div>
+
+      <input type="submit" value="Save" class="btn btn-primary mt-3"/>
+   </form>
+
