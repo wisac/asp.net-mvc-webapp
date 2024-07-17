@@ -7,20 +7,20 @@ public static class CategoriesRepository
       new Category()
       {
          CategoryId = 1,
-         Name = "Teaching",
-         Description = "Teach students"
+         Name = "Fruits",
+         Description = "Provides vitamins and minerals"
       },
       new Category()
       {
          CategoryId = 2,
-         Name = "Cleaners",
-         Description = "Clean the compound"
+         Name = "Carbohydrates",
+         Description = "Provides energy"
       },
       new Category()
       {
          CategoryId = 3,
-         Name = "Security",
-         Description = "Secure the premises"
+         Name = "Protein",
+         Description = "For growth and tissue repair"
       },new Category()
    
    ];
